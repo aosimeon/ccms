@@ -1,9 +1,8 @@
 language: node_js
 node_js:
 - stable
-addons:
-  code_climate:
-    repo_token:
+env:
+  global:
       secure: TjM4FgMX/HnS2w7VZ+MUz+3OiEftdzX0ABY7Y5oJD4ngDfo7snHP4Xw1I+YG3oS20uMz7hbO7uZ0sHZla5nXPEBEnkao/4bB1/0T4OPZLmmv/G0TvARvs2bmfOTeoioB7J4+FHq6wxiQMHlbPZW7NUiXbSkRS6JnBJvFBcrdpB2AdRyWT5jBvtwpBzaLKRXHkYXdNYPfbu2V6eyKn20Qjc9Q8wfdj7h8CMFrZGqqH2Bgc8bgob9ywNfd8UC9C/FoLpRU/f5y2ITndlZRPE5xIPp+9uw7+NDoFetjgEIiNXGlg+jmH29vWCTsjQ/5hFX9KyooRkF0HnyW2wu2oTyTdESNrBFiHISfA/GUnR0sHGpD0bss7Ax3wLs3kDk+KEWrfMBvLfgCdsBUcGFfKHeTIpttse/dyGHYgeQfMFu58fJwzF8ucR6hqbL+X9Wn8izmpCb0sgltEG7O9lqCzEYfAXsT/aTaPm/NLfpGXEQjwcHZWekfXAAjBhDjRsomB4Dr1StddX5lk0LReK91Xg12vW5X9GXlB5HLnwXfkBJ9wMSx2T6SMlAIQqBwx0/sKpTqdXKrkGUWCgvFul1uyC28KLjjai49JTAvk7YjhcJO52V/i3c55j+bu5Lh7yi02lx9kHPi8aWmv+pFXRS7I+5Qw6L0CDdTbDk1nTPsfkw6RA0=
 before_script:
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
@@ -14,7 +13,8 @@ cache:
   directories:
   - node_modules
 script:
-- npm test
+- npm run install
+- npm run test
 after_script:
 - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 - bash <(curl -s https://codecov.io/bash
