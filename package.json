@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "cm": "git-cz",
-    "test": "jest --coverage",
+    "test": "jest",
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/bin/www.js",
     "clean": "rimraf ./dist",
     "transpile": "babel ./src --out-dir ./dist",
