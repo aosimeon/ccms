@@ -9,6 +9,8 @@ before_script:
   > ./cc-test-reporter
 - chmod +x ./cc-test-reporter
 - "./cc-test-reporter before-build"
+install:
+  - npm install -g codecov
 cache:
   directories:
   - node_modules
@@ -17,6 +19,6 @@ script:
 - npm run test
 after_script:
 - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
-- bash <(curl -s https://codecov.io/bash
+- codecov
 notifications:
   email: false
