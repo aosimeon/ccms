@@ -4,7 +4,7 @@
   },
   "coverageDirectory": "./coverage/",
   "collectCoverage": true,
-  "collectCoverageFrom": ["src/extest.js"],
+  "collectCoverageFrom": ["src/**/*.js"],
   "coverageThreshold": {
     "global": {
       "branches": 100,
