@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %> - <%= siteName %></title>
+</head>
+<body>
+    <!--  Header Section  -->
+    <% include ../partials/header %>
+    <main class="register-page">
+        <div class="register-quote">
+            <p>Be faithful in small things because it is in them that your strength lies.</p>
+        </div>
+        <div class="register-form">
+            <p>Register</p>
+            <form action="register.php" method="post" id="register">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" placeholder="First Name">
+                <label for="last_name" >Last Name</label>
+                <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                <br><br>
+                <label for="date_of_birth">Date of Birth(YYYY-MM-DD)</label>
+                <input type="text" name="date_of_birth" id="date_of_birth" placeholder="YYYY-MM-DD">
+                <label for="marital_status">Marital Status</label>
+                <select id="marital_status" name="marital_status">
+                    <option value="" selected="selected" disabled >Relationship Status</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                </select>
+                <br><br>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username">
+
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender">
+                    <option value="" disabled selected="selected">Sex</option>
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+                </select>
+                <br><br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email">
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <br><br>
+                <label for="home_addr">Home Address</label>
+                <input type="text" name="home_addr" id="home_addr" placeholder="Home Address">
+
+                <label for="state">State</label>
+                <input type="text" name="state" id="state" placeholder="State">
+                <br><br>
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" placeholder="City">
+
+                <label for="phone_num">Phone Number</label>
+                <input type="number" name="phone_num" id="phone_num" placeholder="Phone Number">
+                <br><br>
+                <label for="church_branch">Which church branch do you attend? </label>
+                <select id="church_branch" name="church_branch">
+                    <option value="" disabled selected="selected">Church Branch</option>
+                    <option value="1">Ogbomosho Branch(Headquarters)</option>
+                    <option value="2">Oyo Branch</option>
+                    <option value="3">Ibadan Branch</option>
+                    <option value="4">Ilorin Branch</option>
+                    <option value="5">Lagos Branch</option>
+                </select>
+
+                <label for="church_group">Church Group </label>
+                <select id="church_group" name="church_group">
+                    <option value="" disabled selected="selected">Church Group</option>
+                    <option value="member">Member</option>
+                    <option value="choir">Choir</option>
+                    <option value="prayer">Prayer</option>
+                    <option value="drama">Drama</option>
+                    <option value="royal_ambassador">Royal Ambassador</option>
+                    <option value="usher">Usher</option>
+                    <option value="welfar">Welfare</option>
+                </select>
+                <br><br>
+                <input type="submit" name="submit" value="Register">
+                <br><br><br>
+            </form>
+        </div>
+    </main>
+    <!--  Footer Section  -->
+    <% include ../partials/footer %>
+</body>
+</html>

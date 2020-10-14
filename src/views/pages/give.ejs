@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partials/stylesheets %>
+    <title>Document</title>
+</head>
+<body>
+    <% include ../partials/header %>
+    <div class="pay">
+        <div class="header">
+            <p class="title">See what god can do through your generosity.</p>
+        </div>
+        <div class="payment-form">
+            <h2>Give Special Offering/Tithe</h2>
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+                <label for="payment_type">Payment type:</label>
+                <select name="payment_type" id="payment_type">
+                    <option value="special_offering">Special offering</option>
+                    <option value="tithe">Tithe</option>
+                </select>
+                <br><br>
+                <label for="ammt">Amount:</label>
+                <input type="text" name="amt" id="ammt" placeholder="0.00">
+                <br><br>
+                <label for="cc_num">Credit Card Number:</label>
+                <input type="text" name="cc-num" id="cc_num" placeholder="XXXX XXXX XXXX XXXX">
+                <br><br>
+                <label for="name_on_card">Name On Card:</label>
+                <input type="text" name="name_on_card" id="name_on_card" placeholder="John Doe">
+                <br><br>
+                <label for="card_exp_date">Card Expiry Date:</label>
+                <input type="text" name="card_exp_date" id="card_exp_date" placeholder="MM/YY">
+                <br><br>
+                <label for="cvv">CVV:</label>
+                <input type="text" name="cvv" id="cvv" placeholder="CVV/CVC">
+                <br><br>
+                <label for="card_pin">Card Pin:</label>
+                <input type="text" name="card_pin" id="card_pin" placeholder="XXXX">
+                <br><br>
+                <input type="submit" name="submit" value="Process payment">
+            </form>
+        </div>
+    </div>
+    <% include ../partials/footer %>
+</body>
+</html>
