@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/dist/style.css' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %> - <%= siteName %></title>
+    <% include ../partials/stylesheets %>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!--  Header Section  -->
+    <% include ../partials/header %>
+
+    <!--  Main Section  -->
+    <main class="home-main">
+      <!-- Showcase -->
+      <section class="showcase">
+        <p>Church For All People</p>
+        <p> Worship | Grow | Serve</p>
+      </section>
+
+      <!-- Our Mission -->
+      <section class="mission">
+        <h3 class="title">Our Mission</h3>
+        <p>We are a church on a mission to reach every man, woman and child with the Gospel of Jesus Christ</p>
+      </section>
+
+      <!-- Actions -->
+      <section class="actions">
+        <!-- Plan A Visit -->
+        <div class="visit action">
+          <p class="title">Service Times</p>
+          <p>Saturday Night - 6.00 pm</p>
+          <p>Sunday Morning - 8:30 am & 10:30 am</p>
+          <p>Wednesday Night - 7:00 pm</p>
+          <p>Tuesday Morning Prayer - 7:00 am</p>
+        </div>
+
+        <!-- Watch / Download Sermons -->
+        <div class="sermons action">
+          <p>Missed a service? Do not worry, we've got you covered!</p>
+          <button>Download Sermons</button>
+        </div>
+
+        <!-- Give -->
+        <div class="give action">
+          <p>See what God can do through your generousity</p>
+          <button>Give Now</button>
+        </div>
+      </section>
+
+      <!-- Connect With Us -->
+      <section class="connect">
+        <p>Connect with us on social media <br> <i class="fa fa-facebook-square" aria-hidden="true"></i>  <i class="fa fa-twitter-square" aria-hidden="true"></i>  <i class="fa fa-instagram" aria-hidden="true"></i></p>
+      </section>
+
+      <!-- Quote Section -->
+      <section class="quote">
+        <p>
+          Trust in the lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.
+        </p>
+      </section>
+    </main>
+    <!--  Footer Section  -->
+    <% include ../partials/footer %>
+
   </body>
 </html>

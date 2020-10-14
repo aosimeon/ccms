@@ -2,9 +2,9 @@ import express from "express";
 
 const router = express.Router();
 
-/* GET home page. */
+/* GET users listing. */
 router.get("/", (req, res) => {
-  res.render("index", { siteName: "UCOC", title: "Home" });
+  res.render("register", { siteName: "UCOC", title: "Register" });
 });
 
 module.exports = router;

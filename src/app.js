@@ -3,34 +3,27 @@ import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
-import sassMiddleware from "node-sass-middleware";
 
 // Routes
 import indexRouter from "./routes/index";
-import usersRouter from "./routes/users";
+import loginRouter from "./routes/login.route";
+import registerRouter from "./routes/register.route";
 
 const app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "views/pages"));
 app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-  sassMiddleware({
-    src: path.join(__dirname, "public"),
-    dest: path.join(__dirname, "public"),
-    indentedSyntax: false, // true = .sass and false = .scss
-    sourceMap: true,
-  })
-);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/login", loginRouter);
+app.use("/register", registerRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
